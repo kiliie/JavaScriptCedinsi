@@ -1,7 +1,7 @@
 'use strict'
 const listado = document.getElementById('listPoke');
 const fragment = new DocumentFragment();
-console.log(fragment);
+
 //const fragment = document.createDocumentFragment();
 
 async function obtenerLista(){
@@ -21,11 +21,21 @@ async function obtenerLista(){
      return resp;
 }
 const data = await obtenerLista();
+/*//Alternativa para el fragment con innerHTML
+let miListado = "";
+data.forEach(element => {
+    miListado += `<li class="list-group-item">Poke: <i>${element}</i></li>`
+});
+listado.innerHTML = miListado;*/
+
 data.forEach(element => {
     const li = document.createElement('li');
+    //li.className = "list-group-item";
+    li.classList.add('list-group-item');
     li.textContent = element;
-    fragment.appendChild(li);
-    console.log(element);
+    fragment.appendChild(li); //agregar o insertar un nuevo nodo hijo
+    
 });
 listado.appendChild(fragment);
+
 

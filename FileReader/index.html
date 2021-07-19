@@ -9,15 +9,42 @@
 </head>
 
 <body>
-    <p>
+    <h1 class="centrar">Mis Imágenes</h1>
+    <p class="caja">
         <!-- Este input sólo aceptará, archivos jpeg -->
         <input type="file" id="archivo" accept="image/jpeg" multiple>
     </p>
-    <p>
-        <img src="" alt="aca pondremos el archivo" id="imagen">
+    <p class="parrafoI">
+        <img class="imagen" src="" alt="" id="imagen">
     </p>
-
     <script src="main.js"></script>
 </body>
 
 </html>
+<style>
+    .caja {
+        text-align: center;
+        padding: 15px;
+        border: 3px solid rgb(129, 11, 11);
+    }
+
+    .parrafoI {
+        padding: 15px;
+        border: 3px solid rgb(92, 5, 92);
+    }
+
+    .centrar {
+        padding: 10px;
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: blueviolet;
+    }
+
+    .imagen {
+        padding: 0.2in;
+        width: 30%;
+        height: 50%;
+        margin: auto;
+        display: block;
+    }
+</style>
