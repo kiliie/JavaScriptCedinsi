@@ -1,13 +1,15 @@
+'use strict'
 let textoCaja = document.querySelector("#caja");
 let textoCaja2 = document.querySelector("#caja2");
 
-function capturaKB(event) {
+function capturaKeyBoard(event) {
     let evento = event || window.event;
-    textoCaja.innerHTML += " El evento es: "+evento.type+" el código de tecla:"+evento.keyCode+"<br>" 
+    textoCaja.innerHTML += "El evento es: " + evento.type +
+        "El código de la tecla:" + evento.keyCode + "<br>"
     caracter(evento);
-    console.log(evento.target);
+    console.log(evento);
 }
 function caracter(e) {
     textoCaja2.innerHTML += String.fromCharCode(e.charCode);
-    
 }
+//https://elcodigoascii.com.ar/

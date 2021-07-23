@@ -1,24 +1,26 @@
 'use strict'
-let cadenaJson = { "nombre": "Marco Antonio" };
+let cadenaJson = { "nombre": "Angelica" };
 let boolJson = { "soltero": true }
-let numJson = {"edad" : 24}
-let datos = [{
-  "nombre" : "Maria",
-  "apellido" : "Jaimes",
-  "edad" : 46,
-  "materias": ["lógica", "programación", "álgebra"],
-  "soltero": true 
-},
-{
-  "nombre" : "Laura",
-  "apellido" : "Herrera",
-  "edad" : 42,
-  "materias": ["lógica", "programación", "álgebra"],
-  "soltero": false 
-}]
+let numJson = { "edad": 24 }
+let datos = [
+  {
+    "nombre": "Maria",
+    "apellido": "Jaimes",
+    "edad": 46,
+    "materias": ["lógica", "programación", "álgebra"],
+    "soltero":true
+  },
+  {
+    "nombre": "Mario",
+    "apellido": "Duarte",
+    "edad": 40,
+    "materias": ["lógica", "programación", "álgebra"],
+    "soltero":true
+  }
+]
 
-//Cambia de Objeto a Cadena 
-const miDataCadena = JSON.stringify(datos);
-const miDataObj = JSON.parse(miDataCadena);
-console.log(typeof (miDataCadena));
+//Cambio de Objeto a Cadena
+const MiDataCadena = JSON.stringify(datos);
+console.log(typeof (MiDataCadena));
+const miDataObj = JSON.parse(MiDataCadena);
 console.log(typeof (miDataObj));

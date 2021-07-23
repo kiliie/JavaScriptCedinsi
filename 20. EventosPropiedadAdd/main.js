@@ -1,37 +1,34 @@
 "use strict"
 //Evento onClick
 function notasPromedio() {
-    cuerpoPromedio(); 
+    cuerpoPromedio();
 }
-// Mediante propiedad
-
-const calculoPropiedad = document.getElementById('btn3Promedio');
-calculoPropiedad.onclick = function () {
-    cuerpoPromedio(); 
+//Mediante Propiedades
+const btnPropiedad = document.getElementById('btn3Promedio');
+btnPropiedad.onclick = function () {
+    cuerpoPromedio();
 }
+//Método .addEventListener
+const btnAddEvenLis = document.getElementById('btnPromedio');
 
-// Método .addEventListener
-const calculoPromedio = document.getElementById('btnPromedio');
-
-calculoPromedio.addEventListener('click', function () {
+btnAddEvenLis.addEventListener('click', function () {
     cuerpoPromedio();
 });
 
-
-
-// Método de cálculo
+//Método de cálculo del Promedio
 const cuerpoPromedio = () => {
-    let cantidadNotas = prompt('Introduzca la cantidad de notas');
+    let cantidadNotas = prompt("Introduzca la cantidad de notas");
     if (!isNaN(parseInt(cantidadNotas))) {
         let nota = 0;
         let sumaNotas = 0;
         for (let i = 1; i <= cantidadNotas; i++) {
-            nota = prompt('Nota # ' + i + ":");
+            //Las sumaNotas
+            nota = prompt("Instroduzca la Nota No:" + i);
             sumaNotas += (parseFloat(nota));
         }
         let promedio = sumaNotas / cantidadNotas;
-        alert('El promedio de notas es:'+promedio);
+        alert('El promedio de notas es:' + promedio.toFixed(1));
     } else {
-        alert('Valor inválido');
-    }    
+        alert('Valor es inválido');
+    }
 }
