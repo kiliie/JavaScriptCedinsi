@@ -1,0 +1,54 @@
+/*-Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) {
+    table{
+        font-size: 70%;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+     table {
+         font-size: 85%;
+     }
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+   table {
+       font-size: 95%;
+       
+   }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  
+}
+
+
+@media (min-width: 1200px) {
+    table {
+        font-size: 115%;
+    }
+}
+
+input{
+    caret-color: blue;  
+}
+.select{
+    background-color: rgb(128, 10, 10);
+    color:beige;    
+}
+.barras{
+    overflow-y:scroll;    
+    height: 18vh;    
+}
+ .centrar {
+     padding: 10px;
+     text-align: center;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     color: blueviolet;
+ }
+
+ 
+
