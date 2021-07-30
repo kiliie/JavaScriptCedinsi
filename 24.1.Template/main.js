@@ -3,7 +3,6 @@ const listado = document.getElementById('listPoke');
 const fragment = new DocumentFragment();
 const tem = document.getElementById('template').content;
 
-
 async function obtenerLista(){
      const resp = await axios.get("https://pokeapi.co/api/v2/pokemon")
          .then(response => {
@@ -21,25 +20,21 @@ async function obtenerLista(){
      return resp;
 }
 const data = await obtenerLista();
-const comprobacion = ('content' in document.createElement('template'));
-//console.log(comprobacion);
-if (comprobacion) {
+const comprobar = ('content' in document.createElement('template'));
+if (comprobar) {
     data.forEach(element => {
         tem.querySelector('i').textContent = element;
         const miElemento = tem.cloneNode(true);
         fragment.appendChild(miElemento);
-    
     });
 } else {
     data.forEach(element => {
-    const li = document.createElement('li');
-    //li.className = "list-group-item";
-    li.classList.add('list-group-item');
-    li.textContent = element;
-    fragment.appendChild(li); //agregar o insertar un nuevo nodo hijo
-    
-});
+        const li = document.createElement('li');
+        //li.className = "list-group-item";
+        li.classList.add('list-group-item');
+        li.textContent = element;
+        fragment.appendChild(li); //agregar o insertar un nuevo nodo hijo
+    });
 }
+
 listado.appendChild(fragment);
-
-

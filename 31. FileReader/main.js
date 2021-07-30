@@ -6,8 +6,7 @@ archivo.addEventListener('change', (event) => {
     // 1. se verifica si existen archivos       
     if (event.target.files && event.target.files[0]) {
         // 2. se selecciona el elemento img por su id
-        const imagen = document.getElementById('imagen');
-        
+        const imagen = document.getElementById('imagen');        
         // 3. se crea un nuevo file reader
         const reader = new FileReader();
         //4. se lee el archivo como URL

@@ -1,18 +1,19 @@
 'use strict'
 const listado = document.querySelector('tbody');
 const fragment = new DocumentFragment();
-const contendor = document.getElementById('autocomplete');
+const contenedor = document.getElementById('autocomplete');
 let search = document.getElementById('buscar'); // Seleccionando el input buscar
 
-async function obtenerLista(){
-     const resp = await axios.get("https://pokeapi.co/api/v2/pokemon")
-         .then(response => {
-             const resultados = response.data.results;
-             let poke = [];
+async function obtenerLista() {   
+     const resp = await axios.post("https://facturadeventa.com/api/v1/products")
+         .then(response => {             
+             const resultados = response.data;            
+             let products = [];
              for (const i in resultados) {
-                 poke.push(resultados[i]);
+                 products.push(resultados[i]);
              }             
-             return poke;
+             //console.log(products);
+             return products;             
          })
          .catch(error => {
              console.log(error);
@@ -21,49 +22,55 @@ async function obtenerLista(){
      return resp;
 }
 const data = await obtenerLista();
+//console.log(data);//impresión por consola de la data
 search.addEventListener('input', (e) => {
-    let miValue = e.target.value;
+    let miValue = e.target.value.toUpperCase();
     listado.innerHTML = '';
-    if (miValue.trim().length > 2) {
+    if (miValue.trim().length >= 2) {        
         const busqueda = data.filter((item) => {            
-            let k = item.name.includes(miValue);
-            k += item.url.includes(miValue);           
-            return (k)
+            let filterData = item.descripcion.includes(miValue);
+            filterData += item.marca.includes(miValue);
+            filterData += item.stock.includes(miValue);
+            filterData += item.precio.includes(miValue);           
+            return (filterData)
         });        
-        let fr = '';        
+        let sFragment = '';        
         for (const i in busqueda) {            
-            fr += `<tr id='${busqueda[i].name}'><td>${busqueda[i].name.replace(new RegExp(miValue), `<strong>${miValue}</strong>`)}</td>
-                   <td>${ busqueda[i].url.replace(new RegExp(miValue), `<strong>${miValue}</strong>`)}</td>
-                   <td>${ i }</td>
-                   <td>${ busqueda[i].name.replace(new RegExp(miValue), `<strong class="select">${miValue}</strong>`)}</td></tr>`;            
+            sFragment += `
+            <tr id='${busqueda[i].descripcion}'>            
+            <td>${busqueda[i].id.replace(new RegExp(miValue), `<strong class="select">${miValue}</strong>`)}</td>
+            <td>${busqueda[i].descripcion.replace(new RegExp(miValue), `<strong>${miValue}</strong>`)}</td>
+            <td>${ busqueda[i].marca.replace(new RegExp(miValue), `<strong>${miValue}</strong>`)}</td>
+            <td>${ busqueda[i].precio.replace(new RegExp(miValue), `<strong >${miValue}</strong>`)}</td>
+            <td>${ busqueda[i].stock.replace(new RegExp(miValue), `<strong>${miValue}</strong>`)}</td>            
+            </tr>`;            
         }
-        listado.innerHTML = fr;
+        listado.innerHTML = sFragment;
         if (busqueda.length > 0) {
-            contendor.style.display = 'block';
+            contenedor.style.display = 'block';
         } else {
-            contendor.style.display = 'none';            
+            conteDisplay();        
         }
         listado.appendChild(fragment);
         busqueda.forEach(element => {
-            seleccion(document.getElementById(element.name),element.name);
+            seleccion(document.getElementById(element.descripcion),element.descripcion);
         })
     } else {
-        listado.innerHTML = '';
-        contendor.style.display = 'none';        
+        conteDisplay();
     }
 });
 
-function seleccion(li,nombre) {
-    console.log(li);
+const conteDisplay = () => {
+    listado.innerHTML = '';
+    contenedor.style.display = 'none';  
+}
+
+function seleccion(li,nombre) {    
     li.addEventListener('click', (e) => {
-        console.log(e);
         const elem = e.target.textContent;
-        console.log(elem);
         search.value = nombre;
-        listado.innerHTML = '';
-        contendor.style.display = 'none';  
-        console.log(search.textContent);
-    })
+        conteDisplay();      
+    });
 }
 
 

@@ -1,6 +1,6 @@
 'use strict'
 async function SaludoMundo() {
-    let miPromesa =  new Promise( (resolve)  => {
+    let miPromesa =  new Promise((resolve)  => {
         setTimeout( () =>  resolve(console.log("Hola Mundo")), 2000)
     });
     await miPromesa;

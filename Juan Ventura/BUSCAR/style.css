@@ -40,6 +40,7 @@ input{
     color:beige;    
 }
 .barras{
+    z-index: 100;
     overflow-y:scroll;    
     height: 18vh;    
 }
@@ -49,6 +50,8 @@ input{
      font-family: Georgia, 'Times New Roman', Times, serif;
      color: blueviolet;
  }
-
+.tableH{
+    display : none;
+}
  
 

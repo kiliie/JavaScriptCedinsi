@@ -1,7 +1,7 @@
 'use strict'
 const axios = require('axios');
 axios.get("https://pokeapi.co/api/v2/pokemon")
-    .then(response => {        
+    .then(response => {
         console.log(response.data.results);
     })
     .catch(error => {
