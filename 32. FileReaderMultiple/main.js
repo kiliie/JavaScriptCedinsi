@@ -1,9 +1,11 @@
 let archivo = document.getElementById('archivo');
 const fragment = new DocumentFragment();
 let images = document.getElementById('images');
+
 archivo.addEventListener('change', (event) => {   
     if (event.target.files) {
         const files = event.target.files;
+        console.log(files);
         for(let file of files){
             const reader = new FileReader();
             const imagen = document.createElement('img');

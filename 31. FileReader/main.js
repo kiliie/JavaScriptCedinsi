@@ -1,5 +1,5 @@
-let archivo = document.getElementById('archivo');
-const btn = document.getElementById('btn');
+const archivo = document.getElementById('archivo');
+//const btn = document.getElementById('btn');
 
 //Para saber si se ha cargado el archivo, se utiliza el evento chage
 archivo.addEventListener('change', (event) => {

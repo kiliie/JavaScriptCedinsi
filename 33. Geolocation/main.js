@@ -14,7 +14,7 @@ btn_ubicarme.addEventListener('click', () => {
 
 function miUbicacion() {
     const mapaLink = document.getElementById('mapa-link');
-    const datos = document.getElementById('otros')
+    const datos = document.getElementById('otros');
     //3. se accede a la API de geolocalización 
     navigator.geolocation.getCurrentPosition((position) => { 
         //el metodo getCurrentPosition devuelve la posición
@@ -22,6 +22,7 @@ function miUbicacion() {
         //4. se asigna la latitud y la longitud en dos nuevas constantes
         const latitud = position.coords.latitude;
         const longitud = position.coords.longitude;
+        
         const presicion = position.coords.accuracy;
         const altitud = position.coords.altitude;
         datos.innerHTML = `<p>Altitud: ${altitud} La presición es: ${presicion }metros</p>`;
