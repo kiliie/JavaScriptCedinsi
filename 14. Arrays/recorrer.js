@@ -1,10 +1,20 @@
-'use strict'
-const miArreglo = [1, '6', 3.3, 'mi Arreglo', false];
+"use strict";
+const miArreglo = [1, "6", 3.3, "mi Arreglo", false];
 /*
 for (let i = 0; i < 5; i++) {
     console.log(miArreglo[i]);
-}*/
+}
 
 miArreglo.forEach(element => {
     console.log(element);
+});*/
+
+miArreglo.forEach(function (nom, indice) {
+  //console.log(indice,nom);
 });
+
+//Flecha
+miArreglo.forEach((nom, indice) => {
+  //console.log(indice, nom);
+});
+miArreglo.forEach((nom) => console.log(nom));
