@@ -1,33 +1,28 @@
-'use strict'
-import { Persona } from "./Persona.js";
-import { Profesor } from "./Profesor.js";
+"use strict";
+import { Estudiante } from "../Estudiante.js";
+import { Persona } from "../Persona.js";
+import { Profesor } from "../Profesor.js";
 
-/*const miPersona = new Persona('Maria del Socorro', 'Jaimes Guerrero', 'mari22@gmail.com', 16);
+const miPersona = new Persona(
+  "Maria del Socorro",
+  "Jaimes Guerrero",
+  "mari22@gmail.com",
+  16
+);
+/*
 console.log(miPersona.getDatos());
-console.log(miPersona.getClasificacion());*/
+console.log(miPersona.getClasificacion());
+console.log(miPersona.getCantidadHijos());
+//Acceder a método estático
+console.log(Persona.algo());*/
+//Protegido
+console.log(miPersona._nacionalidad);
 const miProfesor = new Profesor('Maria del Socorro', 'Jaimes Guerrero', 'mari22@gmail.com', 16, 22, 12);
 console.log(miProfesor.getDatos());
-console.log("El sueldo es:"+miProfesor.getCalculoSueldo());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log("El sueldo es:" + miProfesor.getCalculoSueldo());
+const miEstudiante = new Estudiante(4);
+console.log(miEstudiante._nacionalidad);
+console.log(miEstudiante.promedio);
 
 /*
 //Crear un objeto 
