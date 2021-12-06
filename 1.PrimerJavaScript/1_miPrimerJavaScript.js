@@ -13,3 +13,5 @@ if (miVariable > 30) {
   miVariable++;
   console.log(miVariable);
 }
+
+console.log('Probando VS onLine');
