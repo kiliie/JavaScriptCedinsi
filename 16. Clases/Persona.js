@@ -10,7 +10,7 @@ class Persona {
     this.correo = correo;
     this.edad = edad;
     this.#cantidadHijos = 0;
-    this._nacionalidad = "Colombiana";
+    //this._nacionalidad = "Colombiana";
   }
   get cantidadHijos() {
     return this.#cantidadHijos;

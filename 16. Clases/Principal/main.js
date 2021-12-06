@@ -9,12 +9,12 @@ const miPersona = new Persona(
   "mari22@gmail.com",
   16
 );
-/*
+
 console.log(miPersona.getDatos());
 console.log(miPersona.getClasificacion());
 console.log(miPersona.getCantidadHijos());
 //Acceder a método estático
-console.log(Persona.algo());*/
+console.log(Persona.algo());
 //Protegido
 console.log(miPersona._nacionalidad);
 const miProfesor = new Profesor('Maria del Socorro', 'Jaimes Guerrero', 'mari22@gmail.com', 16, 22, 12);
